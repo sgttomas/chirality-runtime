@@ -1,0 +1,28 @@
+[package]
+name = "chirality-adapters"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Infrastructure adapters for chirality-runtime"
+
+[dependencies]
+chirality-domain = { workspace = true }
+chirality-ports = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+git2 = { workspace = true }
+notify = { workspace = true }
+aws-sdk-s3 = { workspace = true }
+aws-config = { workspace = true }
+reqwest = { workspace = true }
+jsonwebtoken = { workspace = true }
+rusqlite = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+sha2 = { workspace = true }
+chrono = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["test-util", "macros"] }

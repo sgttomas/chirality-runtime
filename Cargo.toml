@@ -1,0 +1,63 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/chirality-domain",
+    "crates/chirality-ports",
+    "crates/chirality-adapters",
+    "crates/chirality-app",
+    "crates/chirality-api",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/your-org/chirality-runtime"
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Web framework
+axum = "0.7"
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+
+# Git operations
+git2 = "0.18"
+
+# Filesystem watching
+notify = "6"
+
+# S3/MinIO
+aws-sdk-s3 = "1"
+aws-config = "1"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# SQLite (for session index)
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+# HTTP client (for Claude API)
+reqwest = { version = "0.12", features = ["json"] }
+
+# Auth
+jsonwebtoken = "9"
+
+# Utilities
+uuid = { version = "1", features = ["v7", "serde"] }
+ulid = { version = "1", features = ["serde"] }
+sha2 = "0.10"
+thiserror = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+chrono = { version = "0.4", features = ["serde"] }
+async-trait = "0.1"
+
+# Internal crates
+chirality-domain = { path = "crates/chirality-domain" }
+chirality-ports = { path = "crates/chirality-ports" }
+chirality-adapters = { path = "crates/chirality-adapters" }
+chirality-app = { path = "crates/chirality-app" }

@@ -1,0 +1,14 @@
+[package]
+name = "chirality-ports"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Port trait definitions for chirality-runtime"
+
+[dependencies]
+chirality-domain = { workspace = true }
+async-trait = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+
+[dev-dependencies]
